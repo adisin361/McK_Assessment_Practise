@@ -60,4 +60,14 @@ const calculateBowlingScore = rolls => {
   return runningScore;
 };
 
-module.exports = { calculateBowlingScore };
+
+const findMaximumScore = (differentGames) => {
+  let maximumScore = 0;
+  for (let index = 0; index < differentGames.length; index++) {
+    let score = calculateBowlingScore(differentGames[index]);
+    maximumScore = score > maximumScore ? score : maximumScore;
+  }
+  return maximumScore;
+};
+
+module.exports = { calculateBowlingScore, findMaximumScore };
